@@ -24,14 +24,13 @@ app.secret_key = "your_secret_key"
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
-# Load ML Model
 with open('rf_model.pkl', 'rb') as file:
     rf_model = pickle.load(file)
 
 X_min = np.array([22.00200, 127.0004, 0.0, 1960.0, 1.0, 1.0, 5.0], dtype=np.float64)
 X_max = np.array([55.7300, 158.995, 700.0, 2024.0, 12.0, 31.0, 86377.0], dtype=np.float64)
 
-dict = {}  # Store user session data
+dict = {} 
 
 DATABASE = 'database.db'
 
@@ -50,11 +49,11 @@ def init_db():
         conn.commit()
 
 def get_location(lat, lon):
-    api_key="........................"
-    # lat1=lat #Original
-    lat1=17.7771285  #End
-    # lon1=lon  #Original
-    lon1=83.3615678  #End
+    api_key="........................" #Add your api key from google api
+    at1=lat #Original
+    #lat1=17.7771285  #End
+    lon1=lon  #Original
+    #lon1=83.3615678  #End
     #lon1=-8.193 #test
     #lat1=71.19 #test
     # adjustments = [(0, 0), (0.0005, 0.0005), (-0.0005, -0.0005), (0.001, 0.001), (-0.001, -0.001)]
@@ -109,10 +108,10 @@ def authenticate_gmail():
 
 def create_message(sender, to, subject, body_text):
     """Create an email message."""
-    to = to.strip()  # Ensure no extra spaces
+    to = to.strip() 
     if not to or "@" not in to:
-        print(" Invalid recipient email:", to)  # Debugging
-        return None  # Prevent sending invalid email
+        print(" Invalid recipient email:", to) 
+        return None 
 
     message = MIMEText(body_text, 'html')
     message['From'] = sender
@@ -120,7 +119,7 @@ def create_message(sender, to, subject, body_text):
     message['Subject'] = subject
     raw_message = base64.urlsafe_b64encode(message.as_bytes()).decode('utf-8')
     
-    print(" Email prepared for:", to)  # Debugging
+    print(" Email prepared for:", to) 
     return {'raw': raw_message}
 
 def send_email(service, message):
@@ -185,7 +184,7 @@ def dashboard():
     email = dict.get("email", "Unknown")
     user = dict.get("user", "Guest")
     
-    print(f" Dashboard Email: {email}")  # Debugging
+    print(f" Dashboard Email: {email}") 
     return render_template('dashboard.html', email=email, user=user)
 
 @app.route("/getdata")
@@ -193,7 +192,7 @@ def jonkay():
     lat = round(float(request.args.get("lat")), 3)
     lon = round(float(request.args.get("lon")), 3)
 
-    depth = 10  # Placeholder for elevation data
+    depth = 10 
     now = datetime.now()
     year, month, day = now.year, now.month, now.day
     time_in_seconds = now.hour * 3600 + now.minute * 60 + now.second
