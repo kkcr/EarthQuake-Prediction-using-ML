@@ -1,0 +1,165 @@
+body { 
+    font-family: Arial sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #f0f0f0; 
+}
+
+.container{
+    border-radius: 30px;
+    border: 2px solid;
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 550px;
+    max-width: auto;
+    min-width: fit-content;
+    padding: 20px;
+}
+
+.welcome{
+    text-shadow: 5px 0px 0.5px rgb(248, 170, 2);
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+
+.heading{
+    color: rgb(255, 174, 127);
+    margin-top: 4.5%;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: max-content;
+}
+
+.intform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputform{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+}
+
+input{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    background-color: antiquewhite;
+    background-blend-mode: color;
+    border-radius: 15px;
+    width: 300px;
+    padding: 15px;
+}
+
+input:hover{
+    background-color: aliceblue;
+}
+
+.button{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+
+#p0{
+    font-size: 75px;
+}
+
+#p1{
+    font-size: 50px;
+}
+
+#p2{
+    font-size: 15px ;
+}
+
+button:hover { 
+    color: white;
+    background-color: rgba(173, 66, 66, 0.753);
+    border: 1px;
+}
+
+a{
+    color: rgb(255, 174, 127);
+    text-decoration: none;
+}
+
+a:hover{
+    color: #0056b3;
+    text-decoration: #0056b3;
+}
+
+.signup{
+    color: rgb(255, 174, 127);
+    font-weight: bold;
+    font-size: larger;
+    margin-top: 7%;
+}
+
+
+#p0{
+    font-size: 75px;
+}
+
+#p1{
+    font-size: 50px;
+}
+
+#p2{
+    font-size: 15px ;
+}
+
+.error, .success { 
+    text-align: center; 
+    font-size: 14px; 
+    margin-top: 10px; 
+}
+
+
+.error { 
+    color: red; 
+}
+
+.success { 
+    color: green; 
+}

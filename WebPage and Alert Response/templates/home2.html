@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-image: url('static/eqq.jpg'); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-position: center; 
+      background-attachment: fixed; 
+      color: rgb(251, 250, 246);
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 40px 200px;
+    }
+
+    .user-info {
+      text-align: right;
+    }
+
+    .user-info h3 {
+      margin: 5px 0;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      margin-top: 10px; 
+    }
+
+    .location-info {
+      margin-bottom: 30px;
+    }
+
+    .location-info h2 {
+      margin: 0;
+    }
+
+    .location-info p {
+      margin: 5px 0;
+    }
+
+    .box-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .box {
+      display: flex;
+      width: 80%;
+      height: 200px;
+      margin: 20px 0;
+      border: 2px solid rgba(135,200,255,0.9);
+      border-radius: 4px;
+      background-color: rgba(135,200,255,0.9);
+      padding-left: 2%;
+    }
+
+    .box.empty-box {
+      background-color: #1dea65ec;
+      width: 80%;
+      height: 200px;
+      margin: 20px 0;
+      border: 2px solid #1dea65ec;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .subbox1{
+      width: 50%;
+      justify-content: center;
+      align-content: center;
+    }
+    .subbox2{
+      margin: 1%;
+      padding-left: 2%;
+    }
+
+    ul{
+      text-align: left;
+    }
+
+    #logout{
+      text-decoration: none;
+      color: white;
+    }
+
+    h3{
+      font-weight: lighter;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="user-info">
+      <!--<h3>{{ email }}</h3>-->
+      <h3>{{ user }}</h3>
+
+      <a id="logout" href="/"><h3>Logout</h3></a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="location-info">
+      <h2>Current Location</h2>
+      <p><b>City: </b> {{ city if city else "Fecting City...." }}</p>
+      <p><b>Coordinates: </b> Latitude: {{ lat if lat else "Fetching..." }}, Longitude: {{ lon if lon else "Fetching..." }}</p>
+    </div>
+    
+    <div class="box-container">
+      <div class="box">
+        <div class="subbox1">
+          <p id="subb1"><h2><b>When an earthquake is detected nearby</b></h2></p><br>
+          <p id="subb2"><h3>You'll get an alert based on a prediction using historical earthquake records and past data.<h3></p>
+        </div>
+        <div class="subbox2">
+          <p id="subb3">
+            Bear in mind:<br>
+            <ul>
+              <li>Not all earthquakes can be detected</li>
+              <li>Earthquake alerts are not supported in all areas</li>
+              <li>Magnitude and shaking intensity estimates may have errors</li>
+              <li>You may feel or may not feel the predicted magnitude</li>
+            </ul>
+          </p><br>
+        </div>
+
+      </div>
+        <div class="box empty-box">
+          Predicted Magnitude: <b>{{ value | round(2) if value is not none else 'N/A' }}</b>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    async function fetchLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        try {
+          const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`);
+          if (response.ok) {
+            const data = await response.json();
+            const city = data.address.city || data.address.town || data.address.village || 'Unknown City';
+
+            //  Update the HTML elements with fetched values
+            document.getElementById("city").innerText = city;
+            document.getElementById("lat").innerText = latitude.toFixed(6);
+            document.getElementById("lon").innerText = longitude.toFixed(6);
+          } else {
+            console.error("Error fetching city");
+          }
+        } catch (error) {
+          console.error('Error fetching location:', error);
+        }
+      },
+      (error) => {
+        console.error('Error fetching location:', error.message);
+      }
+    );
+  } else {
+    console.error('Geolocation not supported by this browser.');
+  }
+}
+
+
+
+    fetchLocation();
+  </script>
+</body>
+</html>
