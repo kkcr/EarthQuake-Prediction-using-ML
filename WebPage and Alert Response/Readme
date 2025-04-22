@@ -1,0 +1,3 @@
+Add required Credentials.json and token.json file by downloading from google api credential manager
+
+Download your top model in pickle(pkl) format from main code and place it in app.py folder 
