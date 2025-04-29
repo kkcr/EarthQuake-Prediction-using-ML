@@ -55,3 +55,33 @@ Yes, some people say they can predict earthquakes, but here are the reasons why 
   - https://www.earthscope.org/
   - https://www.usgs.gov/programs/earthquake-hazards
   - https://earthquaketrack.com/
+
+## Results
+| Model                           | Accuracies |
+|----------------------------------|------------|
+| Light GBM                        | 93.36      |
+| Random Forest Regressor          | 93.27      |
+| XGBoost                          | 93.03      |
+| Multi-Layer Perceptron (MLP)     | 92.71      |
+| Support Vector Machine           | 92.13      |
+| K-Nearest Neighbour              | 91.68      |
+| Gated Recurrent Unit             | 91.26      |
+| Recurrent Neural Networks        | 91.15      |
+| LSTM                             | 90.79      |
+| Decision Trees Regressor         | 90.73      |
+| Transformer                      | 86.53      |
+
+
+## Top 3 Models Results
+- ### Light GBM
+![Light GBM SP result](https://github.com/user-attachments/assets/c74d7578-3677-4430-95a7-b819e7f4fe20)
+
+- ### Random Forest Regressor
+![Random Forest SP result](https://github.com/user-attachments/assets/c7acdd8c-604d-42ac-9e4e-ac900c97d35d)
+
+- ### XGBoost
+![XGBoost SP result](https://github.com/user-attachments/assets/ae58ff45-1509-4651-8aad-6281167daa86)
+
+  
+## Top 3 Models Feature Importance
+![Top 3 Feature importances](https://github.com/user-attachments/assets/9fb42440-25f1-48dd-889c-c69f61cc78e9)
