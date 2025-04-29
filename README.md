@@ -43,5 +43,7 @@ Yes, some people say they can predict earthquakes, but here are the reasons why 
 - If an earthquake happens to occur that remotely fits their prediction, they claim success even though one or more of their predicted elements is wildly different from what actually occurred, making it a failed prediction.
 
 ## System architecture
-![Earthquake Prediction]()
+
+### Rough flowchart
+![Proposed system](https://github.com/user-attachments/assets/4bbaf94c-bbd5-4e10-a81b-d5fdb6446375)
 
