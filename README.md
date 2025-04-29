@@ -46,6 +46,16 @@ Yes, some people say they can predict earthquakes, but here are the reasons why 
 ### Rough flowchart
 ![Proposed system](https://github.com/user-attachments/assets/4bbaf94c-bbd5-4e10-a81b-d5fdb6446375)
 
+The picture above is a flowchart of the process of an earthquake prediction system. It begins with the user opening the application by registering or signing in. The system proceeds to find out where the user is located through the Reverse Geolocation OpenCage API and fetches elevation information through the Open Topo Data API, in addition to the date and time of the moment.  
+The data collected is processed to predict earthquakes through a pre-trained model saved in a Pickle file. The predicted outcome is shown on a dashboard and also emailed through the Google Gmail API. The process terminates when the email alert is sent successfully.  
+The above flowchart gives a systematic description of how various elements of the system work in conjunction to predict and alert users regarding possible earthquakes.
+
+### APIs Used:
+- **Google API** for Gmail
+- **OpenCage API** for reverse geolocation
+- **opentopodata.org** for elevation
+
+
 
 ## Datasets
 - Due to large set, dataset files were uploaded to GDrive. Link:
@@ -85,3 +95,7 @@ Yes, some people say they can predict earthquakes, but here are the reasons why 
   
 ## Top 3 Models Feature Importance
 ![Top 3 Feature importances](https://github.com/user-attachments/assets/9fb42440-25f1-48dd-889c-c69f61cc78e9)
+
+
+## Alert Result
+![Email](https://github.com/user-attachments/assets/ecec82d0-ce04-4e38-a9cb-d425907bc102)
