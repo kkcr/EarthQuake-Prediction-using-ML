@@ -99,3 +99,24 @@ The above flowchart gives a systematic description of how various elements of th
 
 ## Alert Result
 ![Email](https://github.com/user-attachments/assets/ecec82d0-ce04-4e38-a9cb-d425907bc102)
+
+## References
+- Literature Reviews
+  -  **Improving earthquake prediction accuracy in Los Angeles with machine learning** :- *Cemil Emre Yavas, Lei Chen, Christopher Kadlec, Yiming Ji*  used sophisticated machine learning methods, specifically the Random Forest algorithm, to forecast peak earthquake magnitudes in Los Angeles over a 30-day time frame. Their model had an impressive accuracy of 97.97%, greatly improving seismic risk management and preparedness planning.
+  -  **Earthquake magnitude prediction in Hindukush region using machine learning techniques** :- *K. M. Asim, F. Martínez-Álvarez, A. Basit, T. Iqbal*.  The research delves into machine learning methods for earthquake magnitude prediction in the Hindukush area. Based on seismic data from the past, the authors implement different models to find patterns and enhance forecast accuracy. The research points towards the capability of AI-based methodologies for early warning systems to support preparedness for disasters & reducing risks.
+  -  **Major earthquake event prediction using various machine learning algorithms** :- *Roxane Mallouhy, Chady Abou Jaoude, Christophe Guyeux, Abdallah Makhoul*. The research paper "Major earthquake event prediction using different machine learning algorithms" by Roxane Mallouhy, Chady Abou Jaoude, Christophe Guyeux, and Abdallah Makhoul examines the performance of eight machine learning algorithms for the task of categorizing seismic events into major and minor earthquakes. The work assesses each of the models in terms of a number of metrics to conclude that Random Forest and K-Nearest Neighbours are the most precise classifiers.
+  -  **Earthquake magnitude prediction in Turkey** :-*Hatice Öncel Çekim, Hatice Nur Karakavak, Gamze Ozel, Senem Tekin*.A  comparative study of deep learning methods, ARIMA and singular spectrum analysis. This research compares deep learning approaches used in forecasting earthquake magnitudes in Turkey. It combines ARIMA and SSA for earthquake response and recovery modeling. The study analyzes forecasting precision, stating the superiority of hybrid models in the depiction of seismic patterns and enhancing disaster preparedness and mitigation measures.
+ 
+
+- Links & Websites
+  - **IRIS Browser**  
+    [https://ds.iris.edu/ieb/index.html](https://ds.iris.edu/ieb/index.html?format=text&nodata=404&src=usgs&limit=200&maxlat=56.000&minlat=22.000&maxlon=159.000&minlon=127.000&sbl=1&pbl=1&caller=self&name=Japan%20Region&zm=4)
+  
+  - **Google API for Gmail**  
+    [https://console.cloud.google.com/apis/dashboard](https://console.cloud.google.com/apis/library)
+  
+  - **OpenCage API for Reverse Geolocation**  
+    [https://opencagedata.com/dashboard#geocoding](https://opencagedata.com/dashboard#geocoding)
+  
+  - **OpenTopData API for Elevation**  
+    [https://www.opentopodata.org](https://www.opentopodata.org)
