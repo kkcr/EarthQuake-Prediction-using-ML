@@ -22,7 +22,6 @@ The integration of machine learning in disaster management goes beyond enhancing
 - With these uncertainties in mind, the USGS and other science institutions focus more on long-term hazard mitigation rather than short-term forecasting by promoting earthquake-resistant buildings, creating early warning systems, performing seismic hazard analysis, and initiating public education and preparedness programs.
 - In this way, a proactive system of disaster response and recovery is maintained, lowering earthquake hazards through science-based resilience efforts instead of uncertain predictions.
 
----
 
 ## Existing systems
 
@@ -47,3 +46,12 @@ Yes, some people say they can predict earthquakes, but here are the reasons why 
 ### Rough flowchart
 ![Proposed system](https://github.com/user-attachments/assets/4bbaf94c-bbd5-4e10-a81b-d5fdb6446375)
 
+
+## Datasets
+- Due to large set, dataset files were uploaded to GDrive. Link:
+  - https://drive.google.com/drive/folders/1h3hW_RKqBf0fGPP9_IUlzPTfsRWRBGMz?usp=sharing
+
+- Data was handpicked from websites like:
+  - https://www.earthscope.org/
+  - https://www.usgs.gov/programs/earthquake-hazards
+  - https://earthquaketrack.com/
